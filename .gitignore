@@ -1,0 +1,60 @@
+# Environment variables
+.env
+.env.*
+
+# Allow example env file
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Test / coverage
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Jupyter (se usar)
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Database (local files)
+*.db
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs / Editors
+.vscode/
+.idea/
+
+# Docker (opcional ignorar override local)
+docker-compose.override.yml
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+
+# Secrets
+secrets.json
+
+# Vector DB / embeddings locais
+*.faiss
+*.pkl
+vector_store/
+
+# Temporary files
+tmp/
+temp/
