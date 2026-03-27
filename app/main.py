@@ -1,8 +1,6 @@
 from fastapi import FastAPI
+from app.modules.rag.presentation.rag_controller import router as rag_router
 
 app = FastAPI(title="LLM RAG Service")
 
-
-@app.get("/")
-def health_check():
-    return {"status": "ok"}
+app.include_router(rag_router)
