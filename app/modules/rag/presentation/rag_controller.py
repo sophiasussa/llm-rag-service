@@ -1,5 +1,7 @@
 from fastapi import APIRouter, UploadFile, File, Body
 
+from app.modules.rag.application.text_splitter import split_text
+
 router = APIRouter(prefix="/rag", tags=["rag"])
 
 
@@ -19,9 +21,11 @@ async def upload_document(file: UploadFile = File(...)):
             "error": "File must be a UTF-8 encoded text file (.txt)"
         }
 
+    chunks = split_text(text)
+
     return {
-        "message": "document received",
-        "size": len(text)
+        "message": "document processed",
+        "chunks": len(chunks)
     }
 
 
